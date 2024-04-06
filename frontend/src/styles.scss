@@ -19,6 +19,10 @@ body {
   @include matx.color-variants-back-compat($m3-light-theme);
 }
 
+.app-map {
+  height: 100%;
+  display: block;
+}
 
 a.mdc-list-item {
   border-radius: 100px;

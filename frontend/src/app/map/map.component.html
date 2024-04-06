@@ -1,3 +1,15 @@
-<p>
-  map works!
-</p>
+<google-map width="100%" height="100%" [center]="center" [zoom]="zoom"
+  [options]="{disableDefaultUI: true}"></google-map>
+
+<div class="map-controls">
+  <mat-chip-listbox aria-label="Fish selection" multiple>
+    <mat-chip-option [selected]="showTrafficDensity()" (selectionChange)="showTrafficDensity.set($event.selected)">
+      <mat-icon matChipAvatar class="material-icons-outlined" aria-hidden="false" fontIcon="car_crash"></mat-icon>
+      Natężenie ruchu
+    </mat-chip-option>
+    <mat-chip-option [selected]="showRoadsQuality()" (selectionChange)="showRoadsQuality.set($event.selected)">
+      <mat-icon matChipAvatar class="material-icons-outlined" aria-hidden="false" fontIcon="line_axis"></mat-icon>
+      Jakość dróg
+    </mat-chip-option>
+  </mat-chip-listbox>
+</div>
