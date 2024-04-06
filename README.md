@@ -3,7 +3,7 @@ WheelJourney is an innovative application designed for people with disabilities 
 
 ## Project Architecture
 
-- frontend - Angular 17, Angular Material, Angualr Query
+- frontend - Angular 17, Angular Material, Angular Query
 - backend: .NET C#,
 - hardware: raspberry Pi
 
