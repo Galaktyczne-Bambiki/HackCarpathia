@@ -5,7 +5,7 @@ WheelJourney is an innovative application designed for people with disabilities 
 
 - frontend - Angular 17, Angular Material, Angular Query
 - backend: .NET C#,
-- hardware: raspberry Pi
+- hardware: Raspberry Pi Zero 2 W, MPU-6050 (IMU), Grove Air530 (GPS), Yocto (Linux Embedded)
 
 ## Screenshots from app: 
 ![image](https://github.com/Galaktyczne-Bambiki/HackCarpathia/assets/33430525/155cd03d-33e4-44b0-92a3-22a7b8ec7d7a)
