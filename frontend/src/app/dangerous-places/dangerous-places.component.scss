@@ -4,6 +4,8 @@
   gap: 16px;
   align-items: flex-start;
   justify-content: flex-start;
+  height: 100%;
+  position: relative;
 }
 
 .card-nav-section {
@@ -23,4 +25,22 @@
   &:hover {
     filter: brightness(0.8);
   }
+}
+
+google-map {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+map-info-window {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  font-size: 16px;
+}
+
+.description {
+  font-size: 20px;
 }

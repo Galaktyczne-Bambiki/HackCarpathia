@@ -18,12 +18,12 @@
 
   <ng-container matColumnDef="position">
     <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    <td mat-cell *matCellDef="let element" class="description"> {{element.position}} </td>
   </ng-container>
 
   <ng-container matColumnDef="description">
     <th mat-header-cell *matHeaderCellDef> Opis </th>
-    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    <td mat-cell *matCellDef="let element" class="description"> {{element.description}} </td>
   </ng-container>
 
   <ng-container matColumnDef="image">
@@ -43,5 +43,13 @@
 }
 
 @if(mode() === 'map'){
-
+<google-map width="100%" height="100%" [center]="center" [zoom]="zoom" [options]="mapOptions">
+  @for (item of data(); track item.position) {
+  <map-marker #marker="mapMarker" [position]="item.location" [options]="{}" (mapClick)="openInfoWindow(marker, item)" />
+  }
+  <map-info-window>
+    <img [src]="selectedItem?.image" width="128px" height="128px" />
+    {{selectedItem?.description}}
+  </map-info-window>
+</google-map>
 }
