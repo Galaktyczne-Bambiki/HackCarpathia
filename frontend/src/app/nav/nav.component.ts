@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { AsyncPipe } from '@angular/common';
@@ -15,7 +15,6 @@ import {
   NavigationEnd,
   Router,
   RouterModule,
-  TitleStrategy,
 } from '@angular/router';
 
 @Component({
@@ -36,7 +35,6 @@ import {
 })
 export class NavComponent {
   private breakpointObserver = inject(BreakpointObserver);
-  private titleStrategy = inject(TitleStrategy);
   public route = inject(ActivatedRoute);
   public router = inject(Router);
   public title = toSignal(
