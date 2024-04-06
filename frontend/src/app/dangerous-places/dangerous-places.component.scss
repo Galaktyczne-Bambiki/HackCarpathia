@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.card-nav-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-img {
+  border-radius: 16px;
+  padding: 8px;
+  cursor: pointer;
+  transition: filter 0.3s;
+  object-fit: cover;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}
