@@ -1,0 +1,20 @@
+google-map {
+  display: block;
+  height: 100%;
+}
+
+:host {
+  display: block;
+  height: 100%;
+  position: relative;
+}
+
+.map-controls {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.mat-mdc-standard-chip {
+  --mdc-chip-elevated-container-color: #ffffff;
+}
