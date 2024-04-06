@@ -1,0 +1,47 @@
+<div class="card-nav-section">
+  <mat-card>
+    <mat-card-content>Znalazłeś niebezpieczne miejsce, które może przeszkodzić w komunikacji innym osobom? Zgłoś
+      je!</mat-card-content>
+  </mat-card>
+  <mat-button-toggle-group [value]="mode()" (valueChange)="mode.set($event)" #group="matButtonToggleGroup">
+    <mat-button-toggle value="list" aria-label="Text align left">
+      <mat-icon class="material-icons-outlined" aria-hidden="false" fontIcon="toc"></mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="map" aria-label="Text align center">
+      <mat-icon class="material-icons-outlined" aria-hidden="false" fontIcon="map"></mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+@if(mode() === 'list'){
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Opis </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="image">
+    <th mat-header-cell *matHeaderCellDef> Zdjęcie </th>
+    <td mat-cell *matCellDef="let element"> <img class="table-img" width="128px" height="128px"
+        (click)="open(element.image, element.description)" [src]="element.image">
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+
+
+
+}
+
+@if(mode() === 'map'){
+
+}
