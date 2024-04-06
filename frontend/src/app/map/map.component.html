@@ -1,5 +1,11 @@
-<google-map width="100%" height="100%" [center]="center" [zoom]="zoom"
-  [options]="{disableDefaultUI: true}"></google-map>
+<google-map #mapRef width="100%" height="100%" [center]="center" [zoom]="zoom" [options]="mapOptions">
+  @if (showTrafficDensity()) {
+  <app-traffic-density></app-traffic-density>
+  }
+  @if (showRoadsQuality()) {
+  <app-road-quality [mapRef]="mapRef"></app-road-quality>
+  }
+</google-map>
 
 <div class="map-controls">
   <mat-chip-listbox aria-label="Fish selection" multiple>
