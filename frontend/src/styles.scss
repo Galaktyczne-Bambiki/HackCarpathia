@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+@use '@angular/material-experimental' as matx;
+@import 'custom-theme.scss';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f0f1f9;
+}
+
+
+.light-theme {
+  @include mat.all-component-themes($m3-light-theme);
+  @include matx.color-variants-back-compat($m3-light-theme);
+}
+
+
+a.mdc-list-item {
+  border-radius: 100px;
+
+  .mdc-list-item__primary-text {
+    font: mat.get-theme-typography($m3-light-theme, title-medium, font);
+    color: mat.get-theme-color($m3-light-theme, on-secondary-container);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    background-color: mat.get-theme-color($m3-light-theme, primary, 50);
+  }
+
+  &.router-link-active {
+    background-color: mat.get-theme-color($m3-light-theme, primary, 90);
+  }
+}
