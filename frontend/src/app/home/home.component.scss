@@ -1,0 +1,63 @@
+@use '@angular/material' as mat;
+@import '../../custom-theme.scss';
+
+.lp {
+  width: 100%;
+  background-color: #dae2f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px 12px;
+  box-sizing: border-box;
+}
+
+.lp-logo {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+}
+
+.lp-title {
+  font: mat.get-theme-typography($m3-light-theme, display-large, font);
+  margin-bottom: 32px;
+}
+
+.lp-subtitle {
+  font: mat.get-theme-typography($m3-light-theme, headline-medium, font);
+  margin-top: 0;
+}
+
+.lp-columns {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1300px;
+  margin-top: 64px;
+
+  @media (min-width: 1576px) {
+    flex-direction: row;
+  }
+}
+
+.lp-image {
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.lp-description {
+  font: mat.get-theme-typography($m3-light-theme, headline-small, font);
+  line-height: 1.6;
+  max-width: 1300px;
+  text-align: center;
+
+  @media (min-width: 1576px) {
+    text-align: left;
+  }
+}
+
+.lp-description-center {
+  text-align: center;
+}

@@ -1,0 +1,22 @@
+@use '@angular/material' as mat;
+@import '../../custom-theme.scss';
+
+.lp-columns {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  padding: 16px 32px;
+}
+
+.lp-image {
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.lp-description {
+  font: mat.get-theme-typography($m3-light-theme, headline-small, font);
+  line-height: 1.6;
+  text-align: center;
+}

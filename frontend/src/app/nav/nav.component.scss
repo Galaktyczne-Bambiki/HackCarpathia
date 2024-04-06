@@ -8,8 +8,12 @@
 
 .sidenav {
   width: 360px;
-  padding: 0 12px;
+  padding: 16px;
   background-color: #f0f1f9;
+}
+
+.sidenav-toolbar {
+  margin-bottom: 32px;
 }
 
 .content-sidenav {
@@ -27,13 +31,33 @@
 }
 
 .app-logo {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
   margin-right: 32px;
+
+  @media (min-width: 768px) {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 .app-title {
   font: mat.get-theme-typography($m3-light-theme, headline-small, font);
   color: mat.get-theme-color($m3-light-theme, on-secondary-container);
+}
+
+.navigation-label {
+  padding: 8px 16px;
+  font: mat.get-theme-typography($m3-light-theme, label-large, font);
+}
+
+.main {
+  background-color: #fff;
+  border-radius: 16px;
+  width: calc(100% - 32px);
+  height: 85vh;
+  box-sizing: border-box;
+  margin: 0 16px 16px;
+  overflow: auto;
 }

@@ -5,15 +5,19 @@ name: Docker Backend
 # separate terms of service, privacy policy, and support
 # documentation.
 
+# on:
+#   schedule:
+#     - cron: '21 23 * * *'
+#   push:
+#     branches: [ "master" ]
+#     # Publish semver tags as releases.
+#     tags: [ 'v*.*.*' ]
+#     paths:
+#       - "backend/"
+#   pull_request:
+#     branches: [ "master" ]
 on:
-  schedule:
-    - cron: '21 23 * * *'
-  push:
-    branches: [ "master" ]
-    # Publish semver tags as releases.
-    tags: [ 'v*.*.*' ]
-  pull_request:
-    branches: [ "master" ]
+  workflow_dispatch:
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -75,7 +79,8 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@0565240e2d4ab88bba5387d719585280857ece09 # v5.0.0
         with:
-          context: ./backend/WebApp
+          context: .
+          file: ./backend/WebApp/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
