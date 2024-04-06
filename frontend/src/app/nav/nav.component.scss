@@ -1,0 +1,39 @@
+@use '@angular/material' as mat;
+@import '../../custom-theme.scss';
+
+.sidenav-container {
+  height: 100%;
+  background-color: #f0f1f9;
+}
+
+.sidenav {
+  width: 360px;
+  padding: 0 12px;
+  background-color: #f0f1f9;
+}
+
+.content-sidenav {
+  background-color: #f0f1f9;
+}
+
+.toolbar {
+  background-color: #f0f1f9;
+}
+
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.app-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-right: 32px;
+}
+
+.app-title {
+  font: mat.get-theme-typography($m3-light-theme, headline-small, font);
+  color: mat.get-theme-color($m3-light-theme, on-secondary-container);
+}
