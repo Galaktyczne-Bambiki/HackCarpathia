@@ -1,6 +1,8 @@
 ## Description
 WheelJourney is an innovative application designed for people with disabilities who use wheelchairs. Its main goal is to provide users with information on the quality of the roads and paths they intend to travel on to enable them to choose the most accessible and safe routes.
 
+WheelJourney ranked among the top 5 projects at the HackCarpathia hackathon!
+
 ## Project Architecture
 
 - frontend - Angular 17, Angular Material, Angular Query
